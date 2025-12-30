@@ -1,0 +1,128 @@
+.roof-section {
+  position: relative;
+  height: 100vh;
+  background-image: url("../assets/bali.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Darker top-to-bottom gradient overlay */
+.roof-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+
+.roof-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  padding: 40px 20px;
+  color: white;
+  gap: 60px;
+}
+
+.roof-text {
+  flex: 2;
+  animation: slideIn 1s ease forwards;
+  text-align: center;
+  margin-left: 150px;
+}
+
+.roof-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.roof-text p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* "See Details" Button */
+.roof-btn {
+  margin-top: 25px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  background-color: #ffffffcc;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.roof-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.roof-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.roof-img {
+  width: 350px;
+  height: 300px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(10px);
+}
+
+/* Text slide animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .roof-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .roof-img-wrapper {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .roof-img {
+    width: 220px;
+    transform: none;
+  }
+
+  .roof-btn {
+    margin: 20px auto 0;
+  }
+}
